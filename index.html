@@ -1,0 +1,448 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/imgonline-com-ua-Resize-h8USaPuRbO.jpg" type="image/jpg">
+    <title>Style Gallery</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header-jumbotron text-center">
+        <div class="container">
+            <h1 class="display-4"><i class="bi bi-camera-reels-fill me-2"></i> STYLE GALLERY</h1>
+            <p class="lead text-secondary">Відомі та маловідомі стилі одягу</p>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-secondary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Gallery</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Головна</a>
+                    </li>
+                    <li class="nav-item">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="top-styles.html" id="topStylesDropdown">
+                            Топ Стилі
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="topStylesDropdown">
+                            <li><a class="dropdown-item" href="#">Gothic Lolita</a></li>
+                            <li><a class="dropdown-item" href="#">Cottagecore</a></li>
+                            <li><a class="dropdown-item" href="#">Y2K</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="top-styles.html">Дивитись всі</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Про нас</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center text-white">
+                    <span class="me-2">Обране: <span id="favCount">0</span></span>
+                    <i class="bi bi-heart-fill text-secondary"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-lg-4 col-md-5 mb-4">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0"><i class="bi bi-search me-1"></i> Пошук Стилів</h5>
+                    </div>
+                    <div class="card-body">
+                        <input id="searchInput" class="form-control me-2 bg-dark text-white border-secondary" type="search" placeholder="Введіть стиль" aria-label="Search">
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="mb-0">Особистий Рейтинг</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-sm table-striped">
+                                <thead>
+                                    <tr><th>Стиль</th><th>Рейтинг</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Gothic Lolita</td><td><span class="badge bg-info">10/10</span></td></tr>
+                                    <tr><td>Cottagecore</td><td><span class="badge bg-danger">9.3/10</span></td></tr>
+                                    <tr><td>Y2K</td><td><span class="badge bg-info">9.0/10</span></td></tr>
+                                    <tr><td>Shoujodark</td><td><span class="badge bg-warning text-dark">8.8/10</span></td></tr>
+                                    <tr><td>Grunge</td><td><span class="badge bg-success">8.5/10</span></td></tr>
+                                    <tr><td>Visual Kei</td><td><span class="badge bg-warning text-dark">7.5/10</span></td></tr>
+                                    <tr><td>Jirai Kei</td><td><span class="badge bg-danger">6/10</span></td></tr>
+                                    <tr><td>Scene Kid</td><td><span class="badge bg-info">5.8/10</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">RGB to HEX</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group mb-2">
+                            <input type="number" class="form-control bg-dark text-white border-secondary" id="rInput" placeholder="R">
+                            <input type="number" class="form-control bg-dark text-white border-secondary" id="gInput" placeholder="G">
+                            <input type="number" class="form-control bg-dark text-white border-secondary" id="bInput" placeholder="B">
+                        </div>
+                        <button id="convertBtn" class="btn btn-primary w-100">Конвертувати</button>
+                        <div id="hexResult" class="mt-2 text-center text-white border border-secondary rounded p-2">#XXXXXX</div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="mb-0"><i class="bi bi-bar-chart-fill me-2"></i> Опитування</h5>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-7">
+                <h2 class="mb-4 text-primary">Актуальні Стилі </h2>
+
+                <div id="stylesContainer" class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-info style-card">
+                            <div class="position-relative">
+                                <img src="images/grunge.jpg" class="card-img-top card-img-custom" alt="Grunge" data-bs-toggle="modal" data-bs-target="#grungeModal">
+                                <button class="fav-btn position-absolute top-0 end-0 m-2"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <div class="card-body d-flex flex-column" data-bs-toggle="modal" data-bs-target="#grungeModal">
+                                <h5 class="card-title">Grunge</h5>
+                                <p class="card-text text-muted mb-2 small">Ключові елементи: Фланель, оверсайз джинси, певна недбалість, багатошаровість.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-secondary style-card">
+                            <div class="position-relative">
+                                <img src="images/Visual%20key.jpg" class="card-img-top card-img-custom" alt="Visual Kei" data-bs-toggle="modal" data-bs-target="#vkModal">
+                                <button class="fav-btn position-absolute top-0 end-0 m-2"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <div class="card-body d-flex flex-column" data-bs-toggle="modal" data-bs-target="#vkModal">
+                                <h5 class="card-title">Visual Kei</h5>
+                                <p class="card-text text-muted mb-2 small">Ключові елементи: Андрогінність, складні зачіски, театральний макіяж, епатажність.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-warning style-card">
+                            <div class="position-relative">
+                                <img src="images/Y2K.jpg" class="card-img-top card-img-custom" alt="Y2K" data-bs-toggle="modal" data-bs-target="#y2kModal">
+                                <button class="fav-btn position-absolute top-0 end-0 m-2"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <div class="card-body d-flex flex-column" data-bs-toggle="modal" data-bs-target="#y2kModal">
+                                <h5 class="card-title">Y2K (Early 2000s)</h5>
+                                <p class="card-text text-muted mb-2 small">Ключові елементи: Низька посадка, міні-спідниці, короткі топи, блискітки, велюр.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-danger style-card">
+                            <div class="position-relative">
+                                <img src="images/Gothic%20lolita.jpg" class="card-img-top card-img-custom" alt="Gothic Lolita" data-bs-toggle="modal" data-bs-target="#gothicModal">
+                                <button class="fav-btn position-absolute top-0 end-0 m-2"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <div class="card-body d-flex flex-column" data-bs-toggle="modal" data-bs-target="#gothicModal">
+                                <h5 class="card-title">Gothic Lolita</h5>
+                                <p class="card-text text-muted mb-2 small">Ключові елементи: Романтика і готика, об'ємні сукні, темні прикраси, ляльковий стиль. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-success style-card">
+                            <div class="position-relative">
+                                <img src="images/jirai%20kei.jpg" class="card-img-top card-img-custom" alt="Jirai Kei" data-bs-toggle="modal" data-bs-target="#jiraiModal">
+                                <button class="fav-btn position-absolute top-0 end-0 m-2"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <div class="card-body d-flex flex-column" data-bs-toggle="modal" data-bs-target="#jiraiModal">
+                                <h5 class="card-title">Jirai Kei</h5>
+                                <p class="card-text text-muted mb-2 small">Ключові елементи: Чорний/рожевий, банти, гольфи до колін.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-primary style-card">
+                            <div class="position-relative">
+                                <img src="images/shoujodark.jpg" class="card-img-top card-img-custom" alt="Shoujodark" data-bs-toggle="modal" data-bs-target="#shoujoModal">
+                                <button class="fav-btn position-absolute top-0 end-0 m-2"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <div class="card-body d-flex flex-column" data-bs-toggle="modal" data-bs-target="#shoujoModal">
+                                <h5 class="card-title">Shoujodark</h5>
+                                <p class="card-text text-muted mb-2 small">Ключові елементи: Багатошаровість, приглушені сірі тони, спідниці-плісе, гольфи/гетри, масивне взуття. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="moreStyles" class="row row-cols-1 row-cols-md-2 g-4 mt-4" style="display: none;">
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-success style-card">
+                            <div class="position-relative">
+                                <img src="images/photo_2025-11-27_23-23-03.jpg" class="card-img-top card-img-custom" alt="Scene Kid" data-bs-toggle="modal" data-bs-target="#sceneModal">
+                                <button class="fav-btn position-absolute top-0 end-0 m-2"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <div class="card-body d-flex flex-column" data-bs-toggle="modal" data-bs-target="#sceneModal">
+                                <h5 class="card-title">Scene kid</h5>
+                                <p class="card-text text-muted mb-2 small">Ключові елементи: Об'ємне начісане волосся з довгим чубчиком, вузькі джинси, яскраві неонові кольори, футболки з принтами та ремені із заклепками</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-primary style-card">
+                            <div class="position-relative">
+                                <img src="images/cottagecore.jpg" class="card-img-top card-img-custom" alt="Cottagecore" data-bs-toggle="modal" data-bs-target="#cottagemodal">
+                                <button class="fav-btn position-absolute top-0 end-0 m-2"><i class="bi bi-heart"></i></button>
+                            </div>
+                            <div class="card-body d-flex flex-column" data-bs-toggle="modal" data-bs-target="#cottagemodal">
+                                <h5 class="card-title">Cottagecore</h5>
+                                <p class="card-text text-muted mb-2 small">Ключові елементи: Довгі сукні вільного крою з рукавами-ліхтариками, дрібний квітковий принт, натуральні тканини та пастельна гама. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="d-grid gap-2 mt-4">
+                        <button id="loadMoreBtn" class="btn btn-outline-primary btn-lg" type="button">
+                            <i class="bi bi-arrow-clockwise me-2"></i> Завантажити наступні стилі
+                        </button>
+                    </div>
+            </div> 
+        </div> 
+    </div> 
+
+    <footer class="footer bg-dark">
+        <div class="container text-center">
+            <p class="mb-0 text-white">&copy; 2025 Style Gallery</p>
+            <div class="mt-2">
+                <a href="https://www.instagram.com/_wtrnelv_/" class="text-info me-3"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="grungeModal" tabindex="-1" aria-labelledby="grungeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="grungeModalLabel">Grunge</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-primary mb-3">Варіації Образів</h4>
+                    <div class="row row-cols-1 row-cols-md-3 g-3">
+                        <div class="col"><img src="images/⋆｡° ✩ layered leg warmers again ˚✩ ₊ ‧.jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Grunge Образ 1"></div>
+                        <div class="col"><img src="images/завантаження%20(1).jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Grunge Образ 2"></div>
+                        <div class="col"><img src="images/завантаження%20(3).jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Grunge Образ 3"></div>
+                    </div>
+                    <p class="mt-4">Grunge — це протест проти гламуру, що характеризується недбалістю, поношеністю одягу та поєднанням вінтажу.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+                    <button type="button" class="btn btn-primary">Поділитися</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="vkModal" tabindex="-1" aria-labelledby="vkModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="vkModalLabel">Visual Kei</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-primary mb-3">Варіації Образів</h4>
+                    <div class="row row-cols-1 row-cols-md-3 g-3">
+                        <div class="col"><img src="images/завантаження%20(7).jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Visual Kei Образ 1"></div>
+                        <div class="col"><img src="images/завантаження%20(6).jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Visual Kei Образ 2"></div>
+                        <div class="col"><img src="images/вкейкостюми.jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Visual Kei Образ 3"></div>
+                    </div>
+                    <p class="mt-4">Visual Kei — японський музично-модний рух, що поєднує готику, панк, глем та яскраво виражену андрогінність.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+                    <button type="button" class="btn btn-primary">Поділитися</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="y2kModal" tabindex="-1" aria-labelledby="y2kModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="y2kModalLabel">Y2K</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-primary mb-3">Варіації Образів</h4>
+                    <div class="row row-cols-1 row-cols-md-3 g-3">
+                        <div class="col"><img src="images/завантаження%20(8).jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Y2K Образ 1"></div>
+                        <div class="col"><img src="images/завантаження%20(9).jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Y2K Образ 2"></div>
+                        <div class="col"><img src="images/завантаження%20(10).jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Y2K Образ 3"></div>
+                    </div>
+                    <p class="mt-4">Y2K (Year 2000) — стиль, натхненний естетикою початку 2000-х: глянцеві тканини, мінімалізм, футуризм та яскраві аксесуари.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+                    <button type="button" class="btn btn-primary">Поділитися</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="gothicModal" tabindex="-1" aria-labelledby="gothicModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="gothicModalLabel">Gothic Lolita</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-primary mb-3">Варіації Образів</h4>
+                    <div class="row row-cols-1 row-cols-md-3 g-3">
+                        <div class="col"><img src="images/444mglg.jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Gothic Lolita Образ 1"></div>
+                        <div class="col"><img src="images/завантаження%20(11).jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Gothic Lolita Образ 2"></div>
+                        <div class="col"><img src="images/lolita%20%E2%99%A1.jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Gothic Lolita Образ 3"></div>
+                    </div>
+                    <p class="mt-4">Gothic Lolita — японський вуличний стиль, що поєднує вікторіанську естетику з темною готичною модою </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+                    <button type="button" class="btn btn-primary">Поділитися</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="jiraiModal" tabindex="-1" aria-labelledby="jiraiModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="jiraiModalLabel">Jirai Kei</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-primary mb-3">Варіації Образів</h4>
+                    <div class="row row-cols-1 row-cols-md-3 g-3">
+                        <div class="col"><img src="images/@cremay_axa%20on%20twt_x%20%E2%99%AA.jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Jirai Kei Образ 1"></div>
+                        <div class="col"><img src="images/Darkly%20gothique%20japonais%20Patchwork%20dentelle%20mince%20ensemble%20femmes%20haute%20rue%20Chic%20nouveau%20Style.jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Jirai Kei Образ 2"></div>
+                        <div class="col"><img src="images/555.jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Jirai Kei Образ 3"></div>
+                    </div>
+                    <p class="mt-4">Jirai Kei — естетика, популярна в Японії, що виражає "милу депресію" через чорно-рожеву гаму та великі банти.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+                    <button type="button" class="btn btn-primary">Поділитися</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="shoujoModal" tabindex="-1" aria-labelledby="shoujoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="shoujoModalLabel">Shoujodark</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-primary mb-3">Варіації Образів</h4>
+                    <div class="row row-cols-1 row-cols-md-3 g-3">
+                        <div class="col"><img src="images/cute outfit inspo ୨୧.jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Shoujodark Образ 1"></div>
+                        <div class="col"><img src="images/horror%20protagonist%20style.jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Shoujodark Образ 2"></div>
+                        <div class="col"><img src="images/завантаження%20(12).jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Shoujodark Образ 3"></div>
+                    </div>
+                    <p class="mt-4">Shoujodark — поєднання естетики Shoujo з темними, драматичними та іноді похмурими елементами готики.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+                    <button type="button" class="btn btn-primary">Поділитися</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="cottagemodal" tabindex="-1" aria-labelledby="cottageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="cottageModalLabel">Cottagecore</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-primary mb-3">Варіації Образів</h4>
+                    <div class="row row-cols-1 row-cols-md-3 g-3">
+                        <div class="col"><img src="images/_𖥔 ݁ ˖.jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Cottagecore Образ 1"></div>
+                        <div class="col"><img src="images/завантаження (26).jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Cottagecore Образ 2"></div>
+                        <div class="col"><img src="images/завантаження (28).jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Cottagecore Образ 3"></div>
+                    </div>
+                    <p class="mt-4">Cottagecore — це естетика, що романтизує західне сільське життя, ідеалізуючи простоту, домашній затишок та гармонію з природою.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+                    <button type="button" class="btn btn-primary">Поділитися</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="sceneModal" tabindex="-1" aria-labelledby="sceneModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="sceneModalLabel">Scene kid</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-primary mb-3">Варіації Образів</h4>
+                    <div class="row row-cols-1 row-cols-md-3 g-3">
+                        <div class="col"><img src="images/___.jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Scene kid Образ 1"></div>
+                        <div class="col"><img src="images/завантаження (29).jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Scene kid Образ 2"></div>
+                        <div class="col"><img src="images/Londons coolest scene kids.jfif" class="img-fluid rounded shadow-sm modal-image-fixed" alt="Scene kid Образ 3"></div>
+                    </div>
+                    <p class="mt-4">Scene Kid — це вибухова молодіжна субкультура нульових, що виникла на перетині емо, поп-панку та рейву, відома своїм гіпертрофованим та яскравим виглядом.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+                    <button type="button" class="btn btn-primary">Поділитися</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exitModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title">Вже йдете?</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Не забудьте додати улюблені стилі в обране!</p>
+                    <button class="btn btn-primary w-100" data-bs-dismiss="modal">Добре</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
